@@ -13,14 +13,14 @@ namespace ДЗ_вывод_групп_с_началом_названия
         {
 
             /// первый способ
-
-            /*Console.WriteLine("Введите группы которые ищите (с заглавной буквы):");
+            /*
+            Console.WriteLine("Введите группы которые ищите:");
             
             string sought = Console.ReadLine(); //вводим искомое
             List<string> groups = new List<string>() { "П-30", "Б-30", "Э-30", "М-30", "П-31", "Л-30", "П-32" };  //создал список групп
 
 
-            var targets = groups.Where(gr => gr.Contains(sought)); //вводим переменную targets(цели) и присваиваем ей значени, значение равно: в списке
+            var targets = groups.Where(gr => gr.IndexOf(sought, StringComparison.OrdinalIgnoreCase) >= 0); //вводим переменную targets(цели) и присваиваем ей значени, значение равно: в списке
                                                                    //спомощью метода where, создания новой переменной gr и метода Contains ищем подходящие элементы
             Console.WriteLine("Найденные элементы: ");
 
@@ -34,8 +34,8 @@ namespace ДЗ_вывод_групп_с_началом_названия
 
 
             ///второй способ
-
-            Console.WriteLine("Введите группы которые ищите (с заглавной буквы):");
+            
+            Console.WriteLine("Введите группы которые ищите:");
 
             string sought = Console.ReadLine(); //вводим искомое
             List<string> groups = new List<string>() { "П-30", "Б-30", "Э-30", "М-30", "П-31", "Л-30", "П-32" };  //создал список групп
@@ -44,7 +44,7 @@ namespace ДЗ_вывод_групп_с_началом_названия
 
             foreach (var group in groups)
             {
-                if (group.Contains(sought))
+                if (group.IndexOf(sought, StringComparison.OrdinalIgnoreCase) >= 0) // group.Contains(sought)
                 {
                     Console.WriteLine(String.Join(",", group));
                 }
